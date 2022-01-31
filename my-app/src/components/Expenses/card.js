@@ -3,7 +3,7 @@ import './card.css'
 import ExpenseItem from './ExpenseItem';
 import React from 'react';
 
-function Card(props){
+const Card = (props) =>{
     const classes = 'card ' + props.className;
     return React.createElement('div', {className: classes}, props.children
     )
