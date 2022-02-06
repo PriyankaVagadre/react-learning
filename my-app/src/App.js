@@ -1,7 +1,7 @@
 import './App.css';
 import Todo from './components/Todo/Todo'
 import Modal from './components/Todo/Model'
-import Backdrop from './components/Todo/Backdrop'
+import NewExpense from './components/Expenses/NewExpense/NewExpense'
 import ExpenseItem from './components/Expenses/ExpenseItem';
 import Card from './components/Expenses/card';
 
@@ -25,6 +25,7 @@ function App() {
 
   return (
   <div>
+    <NewExpense/>
  <Card className="expenses">
  <ExpenseItem title={expenses[0].title} ammount={expenses[0].ammount} date={expenses[0].date}/>
     <ExpenseItem title={expenses[1].title} ammount={expenses[1].ammount} date={expenses[1].date}/>
