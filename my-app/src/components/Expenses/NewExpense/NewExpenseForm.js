@@ -36,20 +36,23 @@ function NewExpenseForm() {
           date: new Date(enteredDate)
       }
       console.log(formData)
+      setNewTitle('')
+      setNewAmmount('')
+      setNewDate('')
     }
     return <div>
         <form onSubmit={onSubmitForm}>
             <div className="new-expense__controls">
                 <label>Title</label>
-                <input type="text" onChange={onTitleChange} />
+                <input type="text" value={enteredTitle} onChange={onTitleChange} />
             </div>
             <div className="new-expense__controls">
                 <label>Ammount</label>
-                <input type="number" min="0.01" step="1"  onChange={onAmmountChange} />
+                <input type="number" min="0.01" step="1" value={enteredAmmount} onChange={onAmmountChange} />
             </div>
             <div className="new-expense__controls">
                 <label>Date</label>
-                <input type="date" min="2020-02-02" max="2022-12-20"  onChange={onDateChange} />
+                <input type="date" min="2020-02-02" max="2022-12-20" value={enteredDate} onChange={onDateChange} />
             </div>
             <button type='submit'>Submit</button>
         </form>
