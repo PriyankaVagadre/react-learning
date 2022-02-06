@@ -23,9 +23,13 @@ function App() {
     date: '10/02/2022'
   }];
 
+  const getDataInParent = (childData) =>{
+    console.log('Child Data to parent\n' )
+    console.log(childData)
+  }
   return (
   <div>
-    <NewExpense/>
+    <NewExpense sendDataFromChild={getDataInParent}/>
  <Card className="expenses">
  <ExpenseItem title={expenses[0].title} ammount={expenses[0].ammount} date={expenses[0].date}/>
     <ExpenseItem title={expenses[1].title} ammount={expenses[1].ammount} date={expenses[1].date}/>
