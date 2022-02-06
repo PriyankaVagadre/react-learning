@@ -1,24 +1,58 @@
+import { useState } from 'react'
 import './NewExpenseForm.css'
-function NewExpenseForm(){
-    const onValueChange = (event) =>{
-console.log(event.target.value)
+function NewExpenseForm() {
+     const [enteredTitle, setNewTitle] = useState('') // you can create multiple states
+    const [enteredAmmount, setNewAmmount] = useState('')
+    const [enteredDate, setNewDate] = useState('')
+//    const [userInput, setUserInput] = useState({ //u can also create single state
+//         title: '',
+//         ammount:'',
+//         date:''
+//     })
+
+    const onTitleChange = (event) => {
+       setNewTitle(event.target.value)
+    //   setUserInput({
+    //       ...userInput,
+    //       title : event.target.value
+    //   })
+    }
+    const onAmmountChange = (event) =>{
+      setNewAmmount(event.target.value)
+        // setUserInput({
+        //     ...userInput,
+        //     ammount : event.target.value
+        // })
+    }
+    const onDateChange = (event) =>{
+        setNewDate(event.target.value)
+    }
+
+    const onSubmitForm = (event)=>{
+      event.preventDefault();
+      const formData ={
+          title: enteredTitle,
+          ammount: enteredAmmount,
+          date: new Date(enteredDate)
+      }
+      console.log(formData)
     }
     return <div>
-<form>
-    <div className="new-expense__controls">
-        <label>Title</label>
-        <input type="text" onChange={onValueChange}/>
-    </div>
-    <div className="new-expense__controls">
-        <label>Ammount</label>
-        <input type="number" min="0.01" step="1"/>
-    </div>
-    <div className="new-expense__controls">
-        <label>Date</label>
-        <input type="date" min="02/02/1020" max="02/12/2022"/>
-    </div>
-    <button type='submit'>Submit</button>
-</form>
+        <form onSubmit={onSubmitForm}>
+            <div className="new-expense__controls">
+                <label>Title</label>
+                <input type="text" onChange={onTitleChange} />
+            </div>
+            <div className="new-expense__controls">
+                <label>Ammount</label>
+                <input type="number" min="0.01" step="1"  onChange={onAmmountChange} />
+            </div>
+            <div className="new-expense__controls">
+                <label>Date</label>
+                <input type="date" min="2020-02-02" max="2022-12-20"  onChange={onDateChange} />
+            </div>
+            <button type='submit'>Submit</button>
+        </form>
     </div>
 }
 
