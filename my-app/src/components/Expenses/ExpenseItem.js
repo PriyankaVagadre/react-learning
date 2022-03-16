@@ -11,7 +11,10 @@ function ExpenseItem(props){
         changeDate('03/04/20')
         console.log("Clicked !!")
     }
+
+  //console.log(props.siblingDataFromParent())
     return <div className='expenses'>
+        <div>{props.sendDataThroughCommonParent}</div>
         <div>{title}</div>
         <div>{ammount}</div>
         <div>{date}</div>

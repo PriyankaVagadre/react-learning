@@ -4,6 +4,7 @@ import Modal from './components/Todo/Model'
 import NewExpense from './components/Expenses/NewExpense/NewExpense'
 import ExpenseItem from './components/Expenses/ExpenseItem';
 import Card from './components/Expenses/card';
+import ExpensesFilter from './components/Expenses/ExpensesFilter';
 
 function App() {
   const expenses=[
@@ -27,11 +28,14 @@ function App() {
     console.log('Child Data to parent\n' )
     console.log(childData)
   }
+  
+  var sendDataThroughCommonParent ;
   return (
   <div>
     <NewExpense sendDataFromChild={getDataInParent}/>
  <Card className="expenses">
- <ExpenseItem title={expenses[0].title} ammount={expenses[0].ammount} date={expenses[0].date}/>
+ <ExpensesFilter sendFilterDataToSibling={sendDataThroughCommonParent}/>
+ <ExpenseItem title={expenses[0].title} ammount={expenses[0].ammount} date={expenses[0].date} getSiblingDataFromParent ={sendDataThroughCommonParent}/>
     <ExpenseItem title={expenses[1].title} ammount={expenses[1].ammount} date={expenses[1].date}/>
     <ExpenseItem title={expenses[2].title} ammount={expenses[2].ammount} date={expenses[2].date}/>
    
