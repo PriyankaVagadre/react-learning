@@ -44,13 +44,15 @@ function App() {
         <ExpenseItem title={expenses[1].title} ammount={expenses[1].ammount} date={expenses[1].date}/>
         <ExpenseItem title={expenses[2].title} ammount={expenses[2].ammount} date={expenses[2].date}/>
     </Card> */}
-    {/* <Switch>
+
+<MainNavigation/>
+<hr/>
+    <Switch>
       <Route path="/" exact="true"><HomePage/></Route>
       <Route path="/aboutme"><AboutMePage/></Route>
       <Route path="/contact"><ContactPage/></Route>
-    </Switch> */}
+    </Switch>
 
-    <MainNavigation/>
 
 
     </div>
