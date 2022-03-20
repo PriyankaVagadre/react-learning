@@ -1,3 +1,4 @@
+import ProjectList from './Project/ProjectList';
 const DUMMY_DATA = [
     {
       id: 'm1',
@@ -20,12 +21,13 @@ const DUMMY_DATA = [
   ];
 
 function HomePage(){
-  return<div>Home Page<b/>
-   <ul>
+  return(<div>Home Page<b/>
+   {/* <ul>
       {DUMMY_DATA.map(item=>{
           return <li key={item.id}>{item.title}</li>;
       })}
-   </ul>
-</div>
+   </ul> */}
+   <ProjectList projects={DUMMY_DATA}/>
+</div>)
 }
 export default HomePage;
