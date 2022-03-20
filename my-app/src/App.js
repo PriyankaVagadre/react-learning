@@ -9,6 +9,7 @@ import {Route, Switch} from 'react-router-dom';
 import HomePage from './components/Routing/Home';
 import AboutMePage from './components/Routing/AboutMe';
 import ContactPage from './components/Routing/Contact';
+import MainNavigation from './components/Routing/MainNavigation';
 
 function App() {
   const expenses=[
@@ -43,12 +44,13 @@ function App() {
         <ExpenseItem title={expenses[1].title} ammount={expenses[1].ammount} date={expenses[1].date}/>
         <ExpenseItem title={expenses[2].title} ammount={expenses[2].ammount} date={expenses[2].date}/>
     </Card> */}
-    <Switch>
-    <Route path="/" exact="true"><HomePage/></Route>
-    <Route path="/aboutme"><AboutMePage/></Route>
-    <Route path="/contact"><ContactPage/></Route>
-    </Switch>
-    
+    {/* <Switch>
+      <Route path="/" exact="true"><HomePage/></Route>
+      <Route path="/aboutme"><AboutMePage/></Route>
+      <Route path="/contact"><ContactPage/></Route>
+    </Switch> */}
+
+    <MainNavigation/>
 
 
     </div>
