@@ -5,6 +5,10 @@ import NewExpense from './components/Expenses/NewExpense/NewExpense'
 import ExpenseItem from './components/Expenses/ExpenseItem';
 import Card from './components/Expenses/card';
 import ExpensesFilter from './components/Expenses/ExpensesFilter';
+import {Route} from 'react-router-dom';
+import HomePage from './components/Routing/Home';
+import AboutMePage from './components/Routing/AboutMe';
+import ContactPage from './components/Routing/Contact';
 
 function App() {
   const expenses=[
@@ -32,14 +36,18 @@ function App() {
   var sendDataThroughCommonParent ;
   return (
   <div>
-    <NewExpense sendDataFromChild={getDataInParent}/>
- <Card className="expenses">
- <ExpensesFilter sendFilterDataToSibling={sendDataThroughCommonParent}/>
- <ExpenseItem title={expenses[0].title} ammount={expenses[0].ammount} date={expenses[0].date} getSiblingDataFromParent ={sendDataThroughCommonParent}/>
-    <ExpenseItem title={expenses[1].title} ammount={expenses[1].ammount} date={expenses[1].date}/>
-    <ExpenseItem title={expenses[2].title} ammount={expenses[2].ammount} date={expenses[2].date}/>
-   
- </Card>
+    {/* <NewExpense sendDataFromChild={getDataInParent}/>
+    <Card className="expenses">
+    <ExpensesFilter sendFilterDataToSibling={sendDataThroughCommonParent}/>
+    <ExpenseItem title={expenses[0].title} ammount={expenses[0].ammount} date={expenses[0].date} getSiblingDataFromParent ={sendDataThroughCommonParent}/>
+        <ExpenseItem title={expenses[1].title} ammount={expenses[1].ammount} date={expenses[1].date}/>
+        <ExpenseItem title={expenses[2].title} ammount={expenses[2].ammount} date={expenses[2].date}/>
+    </Card> */}
+    <Route path="/"><HomePage/></Route>
+    <Route path="/aboutme"><AboutMePage/></Route>
+    <Route path="/contact"><ContactPage/></Route>
+
+
     </div>
   );
 }
