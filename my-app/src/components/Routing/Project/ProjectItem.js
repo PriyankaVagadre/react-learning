@@ -3,7 +3,7 @@ import ProjectCard from '../UI-design/ProjectCard';
 
 function ProjectItem(props) {
     return <li className={classes.item} key={props.project.id}>
-        <ProjectCard >
+        <ProjectCard>
         <div className={classes.image}>
             <img src={props.project.image} />
         </div>
