@@ -1,8 +1,9 @@
 import {Link}  from 'react-router-dom';
+import style from './MainNavigation.module.css'
 
 function MainNavigation() {
     return <div>
-        <header>Main Navigation</header>
+        <header className={style.header}>Main Navigation
         <nav>
             <ul>
                 <li>
@@ -16,6 +17,7 @@ function MainNavigation() {
                 </li>
             </ul>
         </nav>
+        </header>
     </div>
 }
 

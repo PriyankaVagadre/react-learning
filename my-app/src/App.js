@@ -9,7 +9,7 @@ import {Route, Switch} from 'react-router-dom';
 import HomePage from './components/Routing/Home';
 import AboutMePage from './components/Routing/AboutMe';
 import ContactPage from './components/Routing/Contact';
-import MainNavigation from './components/Routing/MainNavigation';
+import MainNavigation from './components/Routing/Layout/MainNavigation';
 
 function App() {
   const expenses=[
