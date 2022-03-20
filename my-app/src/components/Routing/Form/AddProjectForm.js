@@ -2,7 +2,8 @@ import classes from './AddProjectForm.module.css'
 import ProjectCard from '../UI-design/ProjectCard';
 import {useRef} from 'react';
 
-function AddProjectForm(params) {
+function AddProjectForm(props) {
+
     const enteredTitle = useRef();
     const enteredImage = useRef();
     const enteredAddress = useRef();
@@ -21,9 +22,8 @@ function AddProjectForm(params) {
             image: getEnteredImage,
             address: getEnteredAddress,
             description: getEnteredDescription
-        }
-        console.log(project);
-
+        };
+        props.sendData(project)
     }
 
     return <ProjectCard>
