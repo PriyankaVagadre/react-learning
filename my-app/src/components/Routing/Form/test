@@ -1,0 +1,15 @@
+ ary= [0,0,0,1,0,1]
+
+ for(i=0;i<ary.length; i++){
+     if(ary[i] === 0){
+         i++
+     }
+     else{
+         if(i<arry.length-1){
+        let temp = ary[i];
+         ary[i] = ary[i+1]
+         ary[i+1] = temp
+         }
+     }
+     
+ }s
