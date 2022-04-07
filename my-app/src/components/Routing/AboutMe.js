@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useReducer, useRef, useState } from "react";
 
 // const reducer = (state, action)=>{
 //   switch(action.type){
@@ -18,17 +18,22 @@ function AboutMePage() {
     //     setCount(count + 1)
     // }
 
-    // useEffect( ()=>{
-    //     console.log("UseEffect called")
-    // },[count]) // you can use [] calling useEffect only once
-
     // const [state, dispatch] = useReducer(reducer, ({ count: 0, showText: true }))
 
-    const inputRef = useRef();
+    const inputRef = useRef(null);
 
-    function showInput(){
- console.log(inputRef.current.value)
- inputRef.current.focus()
+    useLayoutEffect(()=>{
+        console.log("useLayoutEffect called",inputRef.current.value)
+    })
+
+    useEffect( ()=>{
+        inputRef.current.value ="world"
+        console.log("UseEffect called",inputRef.current.value)
+    },[]) // you can use [] calling useEffect only once
+
+    function showInput() {
+        console.log(inputRef.current.value)
+        inputRef.current.focus()
     }
     return <div>About Me Page
         <div>
@@ -45,9 +50,9 @@ function AboutMePage() {
             {state.showText && <p>Show Text</p>} */}
             {/* {count} */}
 
-            <input type="text" ref={inputRef}/>
+            <input type="text" value="hello" ref={inputRef} />
             <button onClick={showInput}>GetValue</button>
-           
+
         </div>
     </div>
 }
