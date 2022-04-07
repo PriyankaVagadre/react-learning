@@ -2,7 +2,7 @@ import AddProjectForm from './Form/AddProjectForm';
 import {useHistory} from 'react-router-dom';
 
 function ContactPage(){
-    const history = useHistory();
+//s    const history = useHistory();
 
     function sendDataToserver(project) {
         fetch('https://react-project-444af-default-rtdb.firebaseio.com/project.json',
@@ -14,7 +14,7 @@ function ContactPage(){
             }
         }
         ).then(()=>{
-            history.replace('/')
+            // history.replace('/')
         })
     }
     return<div>Contact Page
