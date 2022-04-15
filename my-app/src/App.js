@@ -10,6 +10,7 @@ import HomePage from './components/Routing/Home';
 import AboutMePage from './components/Routing/AboutMe';
 import ContactPage from './components/Routing/Contact';
 import MainNavigation from './components/Routing/Layout/MainNavigation';
+import ContextHook from './components/Routing/Layout/Context-hook/ContextHook';
 
 function App() {
   const expenses=[
@@ -51,6 +52,7 @@ function App() {
       <Route path="/" exact="true"><HomePage/></Route>
       <Route path="/aboutme"><AboutMePage/></Route>
       <Route path="/contact"><ContactPage/></Route>
+      <Route path="/context-hook"><ContextHook/></Route>
     </Switch>
 
 

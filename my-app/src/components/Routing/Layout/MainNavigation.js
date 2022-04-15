@@ -15,6 +15,9 @@ function MainNavigation() {
                 <li>
                     <Link to="/contact">Contact</Link>
                 </li>
+                <li>
+                    <Link to="/context-hook">Create Context</Link>
+                </li>
             </ul>
         </nav>
         </header>
